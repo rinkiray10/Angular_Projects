@@ -1,0 +1,19 @@
+table,tr,th,td,thead,tbody{
+    background-color:rgb(230, 221, 228);
+    color:black;
+    border:2px solid rgb(26, 23, 23);
+}
+hr{
+    border-top:1px solid black;
+}
+form{
+    border: 1px black solid;
+    background-color:rgb(230, 221, 228);
+border-radius: 5px;
+width: 400px;
+margin: auto;
+padding: 15px;
+}
+h2{
+    text-align: center;
+}

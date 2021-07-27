@@ -1,0 +1,62 @@
+<p>reactiveforms2 works!</p>
+<form [formGroup]="registerform">
+    <p>
+        <label>Enter the Name: </label>&nbsp;
+        <input type="text" formControlName="name">
+    </p>
+    <div *ngIf="!registerform.get('name')?.valid && (registerform.get('name')?.dirty || registerform.get('name')?.touched)"
+     class="error">
+    <div *ngIf="registerform.get('name')?.errors?.required">
+        <small class="text-danger">Name is required</small>
+    </div>
+    </div>
+    <p>
+        <label>Enter the Password: </label>&nbsp;
+        <input type="password" formControlName="pwd">
+    </p>
+    <div *ngIf="!registerform.get('pwd')?.valid && (registerform.get('pwd')?.dirty || registerform.get('pwd')?.touched)"
+     class="error">
+    <div *ngIf="registerform.get('pwd')?.errors?.required">
+        <small class="text-danger">Password is required</small>
+
+    </div>
+</div>
+    <p>
+        <label>Confirm Password: </label>&nbsp;
+        <input type="password">
+    </p>
+    <p>
+        <label>Enter the Emailid: </label>&nbsp;
+        <input type="text" formControlName="mailid">
+    </p>
+
+    <div *ngIf="!registerform.get('mailid')?.valid && (registerform.get('mailid')?.dirty || registerform.get('mailid')?.touched)"
+     class="error">
+    <div *ngIf="registerform.get('mailid')?.errors?.required">
+        <small class="text-danger">Email is required</small>
+
+    </div>
+        <div *ngIf="registerform.get('mailid')?.errors?.email">
+            <small class="text-danger">Invalid Email Address</small>
+    
+        </div>
+    </div>
+
+    <p>
+        <label>Enter the Phoneno: </label>&nbsp;
+        <input type="number" formControlName="phno">
+    </p>
+    <div *ngIf="!registerform.get('phno')?.valid && (registerform.get('phno')?.dirty || registerform.get('phno')?.touched)"
+     class="error">
+    <div *ngIf="registerform.get('phno')?.errors?.required">
+        <small class="text-danger">Phoneno is required</small>
+    </div>
+    </div>
+    <p>
+        <label>Select the Gender</label>&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="male"> Male &nbsp;
+        <input type="radio" name="gender" value="female"> Female<br>
+        
+    </p>
+    <button class="btn btn-success" type="submit">Register</button>
+</form>

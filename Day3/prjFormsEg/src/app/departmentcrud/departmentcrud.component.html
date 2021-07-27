@@ -1,0 +1,41 @@
+<h2>DEPARTMENT CRUD OPERATIONS</h2>
+<br>
+<form >
+    Enter the Did:      <input type="number" id="did" name="deptid" [(ngModel)]="getdeptinfo.did"><br><br>
+    Enter the DepName:  <input type="text" id="ename" name="deptname" [(ngModel)]="getdeptinfo.dname"><br><br>
+    Enter the Location: <input type="text" id="dlocation" name="deptlocation" [(ngModel)]="getdeptinfo.dlocation"><br><br>
+
+    <button class="btn btn-primary" (click)="addDepartment()">Add</button> &nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary" (click)="updateDepartment()">Update</button> &nbsp;&nbsp;&nbsp;
+
+</form>
+<h1 style="color:rgb(224, 122, 122);font-size: 30px;">{{msg}}</h1>
+<br>
+<hr>
+
+<h3>DEPARTMENT INFO</h3>
+<br>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>DepartmentId</th>
+                <th>DepartmentName</th>
+                <th>DepartmentLocation</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let d of dept; let i=index">
+         <tr>
+             <td>{{d.did}}</td>
+             <td>{{d.dname}}</td>
+             <td>{{d.dlocation}}</td>
+             
+             <td><button  class="btn btn-primary" (click)="editDepartment(d.did)">Edit</button> &nbsp;&nbsp;&nbsp;
+             <button  class="btn btn-primary" (click)="deleteDepartment(d.did)">Delete</button></td>
+         </tr>   
+
+        </tbody>
+
+    </table>
+</div>
